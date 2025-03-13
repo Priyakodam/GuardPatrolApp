@@ -1,0 +1,20 @@
+body {
+    background-color: #f0f0f0;
+  }
+  
+  .container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+  }
+  
+  h2 {
+    color: #007bff;
+  }
+  
+  button:focus, input:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  

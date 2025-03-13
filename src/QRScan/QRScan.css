@@ -1,0 +1,23 @@
+.qrscan-container {
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+
+/* Camera Icon Styling */
+.camera-icon {
+    color: #007bff;
+}
+
+/* Scan Button Styling */
+.scan-button {
+    width: 100%;
+    max-width: 300px;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 25px;
+    /* transition: background-color 0.3s; */
+}
+
+.scan-button:hover {
+    background-color: #0056b3;
+}

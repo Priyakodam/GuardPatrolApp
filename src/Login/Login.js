@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-// import logo from "../Img/solidz_logo.avif";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import logo from "../assets/solidz_logo.avif";
 import "./Login.css";
 
 const Login = () => {
@@ -19,7 +19,7 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     if (email === "admin@gmail.com" && password === "admin@123") {
       navigate('/home');
     } else {
@@ -29,19 +29,19 @@ const Login = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center mt-5 pt-5">
-      <div className="card" style={{ width: '36rem' }}>
-        <div className="card-body">
+    <div className="login-container d-flex justify-content-center align-items-center">
+      <div className="card login-card shadow-lg">
+        <div className="card-body p-4">
           <div className="text-center mb-4">
-            {/* <img src={logo} alt="Logo" className="mb-2" style={{ width: '250px', height: '100px' }} /> */}
-            <h3>Login</h3>
+            <img src={logo} alt="Logo" className="mb-3" style={{ width: '200px' }} />
+            <h3 className="fw-bold">Login</h3>
           </div>
           <form onSubmit={handleLogin}>
-            <div className="mb-3">
-              <label htmlFor="email" style={{ fontWeight: 'bold' }}>Email</label><br />
+            <div className="mb-4">
+              <label htmlFor="email" className="form-label">Email</label>
               <input
                 type="email"
-                className="input-login-email mt-1"
+                className="form-control input-login"
                 id="email"
                 placeholder="Enter Your Email"
                 value={email}
@@ -49,24 +49,32 @@ const Login = () => {
                 required
               />
             </div>
-            <div className="mb-3 position-relative">
-              <label htmlFor="password" style={{ fontWeight: 'bold' }}>Password</label><br />
-              <input
-                type={showPassword ? 'text' : 'password'}
-                className="input-login-password mt-1"
-                id="password"
-                placeholder="Enter Your Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-             
+            <div className="mb-4 position-relative">
+              <label htmlFor="password" className="form-label">Password</label>
+              <div className="input-group">
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  className="form-control input-login"
+                  id="password"
+                  placeholder="Enter Your Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+                <button
+                  type="button"
+                  className="btn btn-outline-secondary toggle-password"
+                  onClick={togglePasswordVisibility}
+                >
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </button>
+              </div>
             </div>
-            {error && <div className="text-danger text-center">{error}</div>}
-            <div className="text-center">
+            {error && <div className="text-danger text-center mb-3">{error}</div>}
+            <div className="text-center mt-4">
               <button
                 type="submit"
-                className="btn loginbutton btn-primary"
+                className="btn btn-primary w-100 loginbutton"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? 'Logging in...' : 'Login'}

@@ -1,10 +1,3 @@
-.welcome-text {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh; 
-}
-
 /* Glassmorphism-style Bottom Navbar */
 .glass-navbar {
     position: fixed;
@@ -19,7 +12,7 @@
     /* background: rgba(255, 255, 255, 0.2); */
     /* backdrop-filter: blur(10px); */
     border-radius: 30px;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Icons Styling */
@@ -63,6 +56,29 @@
     transform: scale(1.1);
 }
 
+/* Profile Dropdown Menu */
+/* .profile-menu {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1051;
+}
+
+.profile-menu a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+    transition: background 0.3s;
+}
+
+.profile-menu a:hover {
+    background: #f0f0f0;
+} */
 
 
 
