@@ -1,70 +1,87 @@
-/* Glassmorphism-style Bottom Navbar */
-.glass-navbar {
+/* Ensure Body doesn't scroll horizontally */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Main Content Container */
+.navbar-main {
+    padding-top: 60px; /* Space for Top Navbar */
+    padding-bottom: 70px; /* Space for Bottom Navbar */
+    background-color: #1a1a1a;
+    color: white;
+}
+
+/* Top Bar */
+.top-bar {
     position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    width: 90%;
-    padding: 10px 0;
-    /* background: rgba(255, 255, 255, 0.2); */
-    /* backdrop-filter: blur(10px); */
-    border-radius: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-bottom: 1px solid white;
+    z-index: 1000;
 }
 
-/* Icons Styling */
-.nav-link {
+/* Logo Styling */
+.logo {
+    height: 40px;
+    background-color: white;
+}
+
+/* Top Right Icons */
+.top-right-icons {
     display: flex;
-    justify-content: center;
     align-items: center;
+    gap: 15px;
+}
+
+/* Notification & Profile Menu */
+.notification-icon {
+    position: relative;
+}
+
+.notification-menu {
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background-color: white;
+    color: black;
     padding: 10px;
-    color: #6c757d;
-    transition: all 0.3s;
-}
-
-.nav-link:hover {
-    color: #007bff;
-}
-
-/* Active icon style */
-.active-icon {
-    background-color: #007bff;
-    color: white !important;
-    border-radius: 50%;
-    padding: 10px;
-}
-
-/* Profile Icon Styling */
-.profile-icon-container {
-    position: fixed;
-    top: 10px;
-    right: 15px;
-    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     z-index: 1050;
 }
 
-/* Profile Icon */
-.profile-icon {
-    color: #007bff;
-    transition: transform 0.3s;
+/* Profile Menu */
+.profile-icon-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-icon{
+    color: white;
 }
 
 .profile-icon:hover {
     transform: scale(1.1);
 }
 
-/* Profile Dropdown Menu */
-/* .profile-menu {
+.profile-menu {
     position: absolute;
     top: 40px;
     right: 0;
-    background: white;
+    background-color: white;
+    color: black;
     padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 1051;
 }
 
@@ -72,50 +89,49 @@
     display: block;
     padding: 5px 10px;
     text-decoration: none;
-    color: #333;
-    transition: background 0.3s;
+    color: black;
 }
 
 .profile-menu a:hover {
-    background: #f0f0f0;
-} */
-
-
-
-.top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.2); /* Optional glass effect */
-    /* backdrop-filter: blur(10px); Glassmorphism effect */
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .logo {
-    height: 40px;
-    object-fit: contain;
-  }
-  
-
-  .profile-menu {
-    position: absolute;
-    right: 10px;
-    top: 60px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .profile-menu a {
-    display: block;
-    padding: 8px 12px;
-    color: black;
-    text-decoration: none;
-  }
-  
-  .profile-menu a:hover {
     background-color: #f0f0f0;
-  }
-  
+}
+
+/* Glassmorphism-style Bottom Navbar */
+.glass-navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px 0;
+    /* background: rgba(0, 0, 0, 0.8); */
+    border-top: 1px solid white;
+    background: black; /* Navbar background black */
+    border-radius: 30px;
+    box-shadow: 0 0 10px white; /* White box shadow */
+    z-index: 1000;
+}
+
+/* Navbar Icons Styling */
+.nav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    transition: all 0.3s;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+}
+
+/* Active Icon Style */
+.active-icon {
+    background-color: white;
+    color: black !important;
+    border-radius: 50%;
+    padding: 10px;
+}

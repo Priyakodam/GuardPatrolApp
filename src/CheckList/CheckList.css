@@ -1,7 +1,19 @@
-/* Checklist Container Adjustment */
 /* .container {
-  padding-bottom: 80px; /* Adjust this value if needed 
-} */
+  width: 100%;
+  padding-top: 60px; /* To avoid overlapping with Navbar */
+  /* padding-bottom: 80px; To avoid overlapping with bottom Navbar */
+  /* background-color: #1a1a1a; Dark background */
+/* }  */
+
+
+.checklist-page{
+
+  width: 100%;
+  /* padding-top: 60px; To avoid overlapping with Navbar */
+  padding-bottom: 80px; /* To avoid overlapping with bottom Navbar */
+  background-color: #1a1a1a; /* Dark background */
+
+}
 
 
 /* Title Styling */
