@@ -6,16 +6,16 @@ import {
   FaCalendarAlt,
   FaClipboardCheck,
   FaUserCircle,
+  FaBell,
 } from "react-icons/fa";
 import logo from "../assets/solidz_logo.avif";
 import "./Navbar.css";
-import Profile from '../Profile/Profile';
-
 
 const Navbar = () => {
   const location = useLocation();
   const [activeIcon, setActiveIcon] = useState(location.pathname.slice(1));
   const [showProfileMenu, setShowProfileMenu] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
 
   const handleIconClick = (iconName) => {
     setActiveIcon(iconName);
@@ -25,20 +25,40 @@ const Navbar = () => {
     setShowProfileMenu(!showProfileMenu);
   };
 
+  const toggleNotifications = () => {
+    setShowNotifications(!showNotifications);
+  };
+
   return (
     <>
-      {/* Top Bar with Logo and Profile Icon */}
-      <div className="top-bar">
+      {/* Top Bar with Logo, Notification Bell and Profile Icon */}
+
+      <div className="top-bar" style={{ backgroundColor: "black" }}>
         <img src={logo} alt="Logo" className="logo" />
-        <div className="profile-icon-container" onClick={toggleProfileMenu}>
-          <FaUserCircle size={32} className="profile-icon" style={{color: "red"}} />
-          {showProfileMenu && (
-            <div className="profile-menu">
-              <Link to="/profile">Profile</Link>
-              <Link to="/settings">Settings</Link>
-              <Link to="/">Logout</Link>
-            </div>
-          )}
+
+        <div className="top-right-icons">
+          <div className="notification-icon" onClick={toggleNotifications}>
+            <FaBell size={25} style={{ cursor: "pointer", color: "white" }} />
+            {showNotifications && (
+              <div className="notification-menu">
+                <p>
+                  <strong>Notifications</strong>
+                </p>
+                <p>No new messages</p>
+              </div>
+            )}
+          </div>
+
+          <div className="profile-icon-container" onClick={toggleProfileMenu}>
+            <FaUserCircle size={32} className="profile-icon" />
+            {showProfileMenu && (
+              <div className="profile-menu">
+                <Link to="/profile">Profile</Link>
+                <Link to="/settings">Settings</Link>
+                <Link to="/">Logout</Link>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 

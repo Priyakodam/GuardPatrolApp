@@ -50,17 +50,6 @@ const Profile = () => {
         </div>
 
         <div className="mb-3">
-          <label className="form-label">Age</label>
-          <input
-            type="number"
-            className="form-control"
-            value={age}
-            onChange={(e) => setAge(e.target.value)}
-            placeholder="Enter your age"
-          />
-        </div>
-
-        <div className="mb-3">
           <label className="form-label">Mobile No</label>
           <input
             type="tel"

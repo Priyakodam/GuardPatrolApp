@@ -28,7 +28,7 @@ const Record = () => {
   return (
     <>
     <Navbar />
-    <div className="d-flex flex-column align-items-center justify-content-center min-vh-100 bg-light p-4">
+    <div className="home-page d-flex flex-column align-items-center justify-content-center min-vh-100 p-4">
       <Card className="w-100 max-w-600 p-4 shadow border-0 rounded bg-white">
         <Card.Body>
           <h2 className="text-center mb-4 fw-bold text-primary">Recorder</h2>

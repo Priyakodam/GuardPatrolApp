@@ -3,7 +3,7 @@ import Navbar from "../Navbar/Navbar"
 
 const Schedule = () => {
   return (
-    <div>
+    <div className="home-page min-vh-100">
       <Navbar />
     </div>
   );
