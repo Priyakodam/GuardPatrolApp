@@ -21,7 +21,7 @@ const Login = () => {
     setIsSubmitting(true);
 
     if (email === "admin@gmail.com" && password === "admin@123") {
-      navigate('/home');
+      navigate('/qrscan');
     } else {
       setError('Invalid email or password.');
       setIsSubmitting(false);

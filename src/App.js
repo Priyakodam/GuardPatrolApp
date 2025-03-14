@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import React, { useState, useEffect, } from "react";
+import { BrowserRouter, Routes, Route, Navigate, useLocation} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./Navbar/Navbar"
 import Register from "./Register/Register"
@@ -10,10 +10,13 @@ import Record from "./Record/Record";
 import Schedule from "./Schedule/Schedule";
 import CheckList from "./CheckList/CheckList";
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+  const hideNavbarRoutes = ["/"]; // List of routes where Navbar should be hidden
+
   return (
-    <BrowserRouter>
-      <Navbar />
+    <>
+      {!hideNavbarRoutes.includes(location.pathname) && <Navbar />}
       <Routes>
         <Route path="/" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
@@ -23,6 +26,14 @@ function App() {
         <Route path="/schedule" element={<Schedule />} />
         <Route path="/checklist" element={<CheckList />} />
       </Routes>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   );
 }
