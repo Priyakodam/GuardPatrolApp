@@ -23,16 +23,18 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: white;
-    border-bottom: 1px solid white;
+    /* padding: 10px 20px; */
+    background-color: white !important;
+    border-bottom: 1px solid #282927;
+    /* box-shadow: 0 0 20px white; */
     z-index: 1000;
+    padding-right: 20px;
 }
 
 /* Logo Styling */
 .logo {
-    height: 40px;
-    background-color: white;
+    height: 55px;
+    width: auto;
 }
 
 /* Top Right Icons */
@@ -100,20 +102,23 @@ body, html {
 .glass-navbar {
     position: fixed;
     bottom: 0;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 70px); /* Makes it slightly narrower than full width */
+    max-width: 500px; /* Sets a maximum width to keep it visually appealing */
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 12px 0;
     margin-bottom: 15px;
-    /* background: rgba(0, 0, 0, 0.8); */
     border-top: 1px solid white;
-    background: black; /* Navbar background black */
+    background: black;
     border-radius: 30px;
-    box-shadow: 0 0 10px white; /* White box shadow */
+    box-shadow: 0 0 10px white;
     z-index: 1000;
 }
+
+
 
 /* Navbar Icons Styling */
 .nav-link {

@@ -14,13 +14,20 @@ import OTPComponent from "./Register/OTP";
 function AppContent() {
   const location = useLocation();
   const hideNavbarRoutes = ["/","/otp"]; // List of routes where Navbar should be hidden
+  const [generatedOtp, setGeneratedOtp] = useState([]);
 
   return (
     <>
       {!hideNavbarRoutes.includes(location.pathname) && <Navbar />}
       <Routes>
-        <Route path="/" element={<Register />} />
-        <Route path="/otp" element={<OTPComponent />} />
+      <Route
+          path="/"
+          element={<Register setGeneratedOtp={setGeneratedOtp} />}
+        />
+        <Route
+          path="/otp"
+          element={<OTPComponent generatedOtp={generatedOtp} />}
+        />
         <Route path="/profile" element={<Profile />} />
         <Route path="/home" element={<Home />} />
         <Route path="/qrscan" element={<QRScan />} />

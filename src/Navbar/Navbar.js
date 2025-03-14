@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   FaQrcode,
@@ -7,6 +7,7 @@ import {
   FaClipboardCheck,
   FaUserCircle,
   FaBell,
+  FaHome,
 } from "react-icons/fa";
 import logo from "../assets/solidz_logo.avif";
 import "./Navbar.css";
@@ -16,6 +17,12 @@ const Navbar = () => {
   const [activeIcon, setActiveIcon] = useState(location.pathname.slice(1));
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
+
+
+  useEffect(() => {
+    const path = location.pathname.slice(1) || "qrscan"; // Default to "qrscan"
+    setActiveIcon(path);
+  }, [location.pathname]);
 
   const handleIconClick = (iconName) => {
     setActiveIcon(iconName);
@@ -38,7 +45,7 @@ const Navbar = () => {
 
         <div className="top-right-icons">
           <div className="notification-icon" onClick={toggleNotifications}>
-            <FaBell size={25} style={{ cursor: "pointer", color: "white" }} />
+            <FaBell size={25} style={{ cursor: "pointer", color: "#2a2927" }} />
             {showNotifications && (
               <div className="notification-menu">
                 <p>
@@ -50,7 +57,7 @@ const Navbar = () => {
           </div>
 
           <div className="profile-icon-container" onClick={toggleProfileMenu}>
-            <FaUserCircle size={32} className="profile-icon" />
+            <FaUserCircle size={32} className="profile-icon" style={{color: "#2a2927"}} />
             {showProfileMenu && (
               <div className="profile-menu">
                 <Link to="/profile">Profile</Link>
@@ -64,12 +71,14 @@ const Navbar = () => {
 
       {/* Glassmorphism Bottom Navbar */}
       <div className="glass-navbar">
+
+
         <Link
           to="/qrscan"
           onClick={() => handleIconClick("qrscan")}
           className={`nav-link ${activeIcon === "qrscan" ? "active-icon" : ""}`}
         >
-          <FaQrcode size={24} />
+          <FaQrcode size={22} />
         </Link>
 
         <Link
@@ -77,7 +86,17 @@ const Navbar = () => {
           onClick={() => handleIconClick("record")}
           className={`nav-link ${activeIcon === "record" ? "active-icon" : ""}`}
         >
-          <FaMicrophone size={24} />
+          <FaMicrophone size={22} />
+        </Link>
+
+        <Link
+          to="/home"
+          onClick={() => handleIconClick("home")}
+          className={`nav-link ${
+            activeIcon === "home" ? "active-icon" : ""
+          }`}
+        >
+          <FaHome size={26} style={{paddingTop:"-10px"}}/>
         </Link>
 
         <Link
@@ -87,7 +106,7 @@ const Navbar = () => {
             activeIcon === "schedule" ? "active-icon" : ""
           }`}
         >
-          <FaCalendarAlt size={24} />
+          <FaCalendarAlt size={22} />
         </Link>
 
         <Link
@@ -97,8 +116,9 @@ const Navbar = () => {
             activeIcon === "checklist" ? "active-icon" : ""
           }`}
         >
-          <FaClipboardCheck size={24} />
+          <FaClipboardCheck size={22} />
         </Link>
+
       </div>
     </>
   );

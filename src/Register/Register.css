@@ -7,7 +7,7 @@ body {
     margin: 0;
 }
 
-.registration-box {
+.register-container-unique {
     background: linear-gradient(25deg, #ebebeb9c, #e0e0e0);
     padding: 30px;
     border-radius: 10px;
@@ -18,19 +18,19 @@ body {
     border: 2px solid white;
 }
 
-.logo {
+.register-logo-unique {
     width: 280px;
     height: auto;
     margin-bottom: 15px;
 }
 
-.form-label {
+.form-label-unique {
     font-weight: 500;
     text-align: left;
     margin-bottom: 5px;
 }
 
-.form-control {
+.form-control-unique {
     border: none;
     border-radius: 10px;
     background-color: transparent;
@@ -38,52 +38,25 @@ body {
     padding: 8px;
     margin-bottom: 10px;
     transition: border-bottom-color 0.3s ease;
+    width: 100%;
 }
 
-.form-control:focus {
+.form-control-unique:focus {
     border-bottom-color: #3f4040;
     outline: none;
 }
 
-.btn-primary {
+.register-btn-unique {
     background-color: #2a2927;
     color: white;
     border: 1px solid #999997;
     border-radius: 8px;
     padding: 10px;
     transition: background-color 0.3s ease;
+    width: 100%;
 }
 
-.btn-primary:hover {
+.register-btn-unique:hover {
     background-color: #717171;
     border-color: #111112;
-}
-
-@media (max-width: 768px) {
-    .registration-box {
-        width: 100%;
-        padding: 20px;
-    }
-
-    .logo {
-        width: 200px;
-    }
-
-    .form-control,
-    .btn-primary {
-        font-size: 14px;
-        padding: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo {
-        width: 150px;
-    }
-
-    .form-control,
-    .btn-primary {
-        font-size: 12px;
-        padding: 10px;
-    }
 }

@@ -7,7 +7,7 @@ body {
     color: #292826;
 }
 
-.otp-card {
+.otp-container-unique {
     background: linear-gradient(25deg, #ebebeb9c, #e0e0e0);
     padding: 30px;
     border-radius: 10px;
@@ -17,13 +17,19 @@ body {
     text-align: center;
 }
 
-.logo {
+.otp-logo-unique {
     width: 280px;
     height: auto;
     margin-bottom: 15px;
 }
 
-.otp-input {
+.otp-input-container-unique {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.otp-input-unique {
     width: 50px;
     height: 50px;
     margin: 5px;
@@ -33,51 +39,25 @@ body {
     border-radius: 3px;
     background: rgba(255, 255, 255, 0.4);
     color: white;
+    transition: background 0.3s;
 }
 
-.otp-input:focus {
+.otp-input-unique:focus {
     outline: 0.2px solid white;
     background: rgba(255, 255, 255, 0.2);
 }
 
-.resend-link {
+.resend-text-unique {
+    color: white;
+    font-size: 0.9rem;
+}
+
+.resend-link-unique {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
 }
 
-.resend-link:hover {
+.resend-link-unique:hover {
     text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-    .otp-card {
-        padding: 20px;
-        width: 100%;
-    }
-    .logo {
-        width: 200px;
-    }
-    .otp-input {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .otp-card {
-        padding: 15px;
-    }
-    .logo {
-        width: 150px;
-    }
-    .otp-input {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-    }
 }
